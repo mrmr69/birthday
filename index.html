@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>For My Special Maryem</title>
   <style>
   
@@ -14,11 +14,18 @@ body {
   color: #5a3d3d;
   min-height: 100vh;
   overflow-x: hidden;
- background: 
-    url('maybe.jpg') center/cover no-repeat fixed;
+  background: url('maybe.jpg') center/cover no-repeat fixed;
   background-blend-mode: overlay;
-  background-color: rgba(255, 240, 245, 0.63);  background-size: 400% 400%;
+  background-color: rgba(255, 240, 245, 0.63);
+  background-size: 400% 400%;
   animation: gradientBG 12s ease infinite;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 @keyframes gradientBG {
@@ -43,7 +50,7 @@ body {
 }
 
 .unlock-container {
-  background: rgba(255, 255, 255, 0.594);
+  background: rgba(255, 255, 255, 0.262);
   border-radius: 20px;
   padding: 30px;
   width: 400px;
@@ -83,7 +90,7 @@ body {
   justify-content: center;
   font-size: 24px;
   color: #ff4d88;
-  background-color: rgba(255, 255, 255, 0.64);
+  background: rgba(255, 255, 255, 0.438);
   transition: all 0.3s;
 }
 
@@ -127,6 +134,8 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .key:hover {
@@ -158,6 +167,7 @@ body {
   font-size: 3rem;
   margin: 5px 0 10px;
   animation: glow 2s infinite alternate;
+  padding: 0 20px;
 }
 
 @keyframes glow {
@@ -176,7 +186,8 @@ body {
 .lovess img {
   max-width: 200px;
   border-radius: 50%;
-  margin-left: 45%;
+  margin: 0 auto;
+  display: block;
   border: 5px solid #ff4d88;
   box-shadow: 0 0 20px rgba(255, 77, 136, 0.5);
   animation: float 3s ease-in-out infinite;
@@ -199,7 +210,7 @@ body {
   width: 100%;
   max-width: 500px;
   margin: 0 auto 30px auto;
-  background: rgba(255, 255, 255, 0.596);
+  background: rgba(255, 255, 255, 0.262);
   border-radius: 20px;
   padding: 25px;
   box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
@@ -220,7 +231,7 @@ body {
 }
 
 .link-box {
-  background: linear-gradient(to right, #fff0f5, #ffeef2);
+  background: rgba(255, 255, 255, 0.438);
   padding: 30px;
   border-radius: 12px;
   margin-bottom: 15px;
@@ -258,23 +269,19 @@ body {
 
 .memory-item {
   cursor: pointer;
-   background: linear-gradient(to right, #fff0f5, #ffeef2);
-
+  background: rgba(255, 255, 255, 0.438);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   width: 100%;
-   font-family: 'Dancing Script', cursive;
- 
+  font-family: 'Dancing Script', cursive;
 }
 
 .memory-item:hover {
   transform: translateY(-5px) scale(1.02);
-   box-shadow: 0 8px 15px rgba(255, 77, 136, 0.3);
-    background: linear-gradient(to right, #ffe5f0, #ffdde9);
-
-
+  box-shadow: 0 8px 15px rgba(255, 77, 136, 0.3);
+  background: linear-gradient(to right, #ffe5f0, #ffdde9);
 }
 
 .memory-item img {
@@ -291,7 +298,6 @@ body {
 .memory-caption {
   padding: 15px;
   text-align: center;
- 
 }
 
 .memory-caption strong {
@@ -428,7 +434,9 @@ body {
 }
 
 .modal {
-  background: white;
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  background: rgba(255, 255, 255, 0.798);
   border-radius: 15px;
   padding: 30px;
   width: 90%;
@@ -464,7 +472,7 @@ body {
 }
 
 .close-btn:hover {
-   background: #ff4d88;
+  background: #ff4d88;
   transform: rotate(90deg) scale(1.1);
 }
 
@@ -482,43 +490,7 @@ body {
   min-height: 100px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .unlock-container {
-    width: 85%;
-    padding: 20px;
-  }
-
-  .birthday-title {
-    font-size: 2.2rem;
-  }
-
-  .memories-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .key {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-
-  .pin-box {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-  }
-}
-
-/* Shake Animation for Wrong PIN */
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20% { transform: translateX(-10px); }
-  40% { transform: translateX(10px); }
-  60% { transform: translateX(-10px); }
-  80% { transform: translateX(10px); }
-}
-.entery{
+.entery {
   margin-left: 5%;
   font-size: 50px;
   color: #ff4d88;
@@ -526,7 +498,8 @@ body {
   margin-top: 2%;
   animation: glow 2s infinite alternate;
 }
-/* Expanded Image Styles - Improved */
+
+/* Expanded Image Styles */
 .expanded-image-overlay {
   position: fixed;
   top: 0;
@@ -565,7 +538,7 @@ body {
 }
 
 .expanded-caption {
-  background:white;
+  background: white;
   color: #5a3d3d;
   font-family: 'Dancing Script', cursive;
   font-size: 15px;
@@ -613,7 +586,6 @@ body {
   transform: rotate(90deg) scale(1.1);
 }
 
-/* Animation for the expanded view */
 @keyframes fadeInZoom {
   from {
     opacity: 0;
@@ -628,27 +600,148 @@ body {
 .expanded-image-container {
   animation: fadeInZoom 0.3s ease-out;
 }
-.about-title{
+
+.about-title {
   color: #ff4d88;
   margin-bottom: 20px;
   font-family: 'Dancing Script', cursive;
   font-size: 2rem;
   text-align: center;
 }
-.about{
+
+.about {
   color: #5a3d3d;
   width: 100%;
   max-width: 80%;
   margin: 0 auto 30px auto;
-  background: rgba(255, 255, 255, 0.596);
+  background: rgba(255, 255, 255, 0.262);
   border-radius: 20px;
   padding: 25px;
   box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
   transition: all 0.3s;
   font-family: 'Dancing Script', cursive;
   font-size: larger;
+}
 
+/* Shake Animation for Wrong PIN */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+}
 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .unlock-container {
+    width: 85%;
+    padding: 20px;
+  }
+
+  .birthday-title {
+    font-size: 2.2rem;
+  }
+
+  .memories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .key {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .pin-box {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .entery {
+    font-size: 1.8rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+  }
+  
+  .content {
+    padding: 10px;
+  }
+  
+  .box {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .modal {
+    width: 95%;
+    padding: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .about {
+    max-width: 95%;
+    padding: 15px;
+    font-size: 1rem;
+  }
+  
+  .expanded-image-container {
+    width: 95%;
+  }
+  
+  .expanded-caption {
+    max-width: 95%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .unlock-title {
+    font-size: 2rem;
+  }
+  
+  .birthday-title {
+    font-size: 1.8rem;
+  }
+  
+  .entery {
+    font-size: 1.5rem;
+  }
+  
+  .key {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .pin-box {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  .lovess img {
+    max-width: 180px;
+  }
+  
+  .link-box {
+    padding: 20px;
+  }
+  
+  .memory-caption span {
+    font-size: 1rem;
+  }
+}
+
+/* Prevent iOS text size adjust */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
 }
 </style>
   </style>
