@@ -987,11 +987,12 @@ And loving her is the most beautiful thing I’ve ever done.</div>
   }
 }
 
-    function clearPin() {
-      pin = '';
-      updatePinDisplay();
-      message.textContent = '';
-    }
+   function clearPin() {
+  pin = '';
+  updatePinDisplay();
+  message.textContent = '';
+  message.classList.remove('show');
+}
 
  function updatePinDisplay() {
   const boxes = document.querySelectorAll('.pin-box');
@@ -1001,37 +1002,40 @@ And loving her is the most beautiful thing I’ve ever done.</div>
 }
 
 
-    function checkPin() {
-      if (pin.length < 4) {
-        message.textContent = 'Please enter 4 digits';
-        return;
-      }
+function checkPin() {
+  if (pin.length < 4) {
+    message.textContent = 'Please enter 4 digits';
+    message.classList.add('show');
+    return;
+  }
 
-      if (pin === correctPin) {
-        message.textContent = 'Correct! Unlocking your gift...';
-        createConfetti();
-          // Play the background music
-        const bgMusic = document.getElementById('bgMusic');
-        bgMusic.volume = 0.3; // Set volume to 30%
-        bgMusic.play().catch(e => console.log("Auto-play prevented:", e));
-        // Show birthday page after 2 seconds
-        setTimeout(() => {
-          unlockScreen.style.display = 'none';
-          birthdayPage.style.display = 'block';
-        }, 2000);
-        
-      } else {
-        message.textContent = 'Incorrect code, try again';
-        pin = '';
-        updatePinDisplay();
-        
-        // Shake animation for wrong PIN
-        pinDisplay.style.animation = 'shake 0.5s';
-        setTimeout(() => {
-          pinDisplay.style.animation = '';
-        }, 500);
-      }
-    }
+  if (pin === correctPin) {
+    message.textContent = 'Enjoy :)';
+    message.classList.add('show');
+    createConfetti();
+    // Play the background music
+    const bgMusic = document.getElementById('bgMusic');
+    bgMusic.volume = 0.3; // Set volume to 30%
+    bgMusic.play().catch(e => console.log("Auto-play prevented:", e));
+    // Show birthday page after 2 seconds
+    setTimeout(() => {
+      unlockScreen.style.display = 'none';
+      birthdayPage.style.display = 'block';
+    }, 2000);
+    
+  } else {
+    message.textContent = 'Incorrect code, try again';
+    message.classList.add('show');
+    pin = '';
+    updatePinDisplay();
+    
+    // Shake animation for wrong PIN
+    pinDisplay.style.animation = 'shake 0.5s';
+    setTimeout(() => {
+      pinDisplay.style.animation = '';
+    }, 500);
+  }
+}
 
     // Add shake animation for wrong PIN
     const style = document.createElement('style');
